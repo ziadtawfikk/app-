@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled4/pages/Home.dart';
+
 import 'register.dart'; // تأكد من استيراد ملف Register
 
 class Login extends StatelessWidget {
@@ -11,9 +13,10 @@ class Login extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0), // إضافة padding حول Column
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // توسيط العناصر عموديًا
+            mainAxisAlignment:
+                MainAxisAlignment.center, // توسيط العناصر عموديًا
             children: [
-              TextField(
+              const TextField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   hintText: "Enter Your Email:",
@@ -24,11 +27,11 @@ class Login extends StatelessWidget {
                     borderSide: BorderSide(color: Colors.grey),
                   ),
                   filled: true,
-                  contentPadding: const EdgeInsets.all(8),
+                  contentPadding: EdgeInsets.all(8),
                 ),
               ),
-              SizedBox(height: 16), // مسافة بين الحقول
-              TextField(
+              const SizedBox(height: 16), // مسافة بين الحقول
+              const TextField(
                 obscureText: true, // تفعيل حماية النص عند الكتابة
                 decoration: InputDecoration(
                   hintText: "Enter Your Password:",
@@ -39,22 +42,25 @@ class Login extends StatelessWidget {
                     borderSide: BorderSide(color: Colors.grey),
                   ),
                   filled: true,
-                  contentPadding: const EdgeInsets.all(8),
+                  contentPadding: EdgeInsets.all(8),
                 ),
               ),
-              SizedBox(height: 20), // مسافة قبل زر Sign In
+              const SizedBox(height: 20), // مسافة قبل زر Sign In
               ElevatedButton(
                 onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Home()));
                   // إضافة إجراء تسجيل دخول
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green, // لون الزر
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20), // حواف دائرية
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Sign In',
                   style: TextStyle(
                     color: Colors.white, // جعل النص باللون الأبيض
@@ -63,19 +69,21 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20), // المسافة بين الزر والصف
+              const SizedBox(height: 20), // المسافة بين الزر والصف
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Do not have an account? "),
+                  const Text("Do not have an account? "),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Register()), // الانتقال إلى صفحة التسجيل
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const Register()), // الانتقال إلى صفحة التسجيل
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       "Sign Up",
                       style: TextStyle(
                         color: Colors.green,
