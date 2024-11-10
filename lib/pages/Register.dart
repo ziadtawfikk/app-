@@ -16,7 +16,7 @@ class Register extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center, // توسيط العناصر أفقيًا
               children: [
                 // خانة اسم المستخدم
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: "Enter Your Username:", // نص الخانة
                     enabledBorder: OutlineInputBorder(
@@ -26,12 +26,12 @@ class Register extends StatelessWidget {
                       borderSide: BorderSide(color: Colors.grey),
                     ),
                     filled: true,
-                    contentPadding: const EdgeInsets.all(8),
+                    contentPadding: EdgeInsets.all(8),
                   ),
                 ),
-                SizedBox(height: 16), // مسافة بين الحقول
+                const SizedBox(height: 16), // مسافة بين الحقول
                 // خانة البريد الإلكتروني
-                TextField(
+                const TextField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: "Enter Your Email:",
@@ -42,12 +42,12 @@ class Register extends StatelessWidget {
                       borderSide: BorderSide(color: Colors.grey),
                     ),
                     filled: true,
-                    contentPadding: const EdgeInsets.all(8),
+                    contentPadding: EdgeInsets.all(8),
                   ),
                 ),
-                SizedBox(height: 16), // مسافة بين الحقول
+                const SizedBox(height: 16), // مسافة بين الحقول
                 // خانة كلمة المرور
-                TextField(
+                const TextField(
                   obscureText: true, // تفعيل حماية النص عند الكتابة
                   decoration: InputDecoration(
                     hintText: "Enter Your Password:",
@@ -58,22 +58,22 @@ class Register extends StatelessWidget {
                       borderSide: BorderSide(color: Colors.grey),
                     ),
                     filled: true,
-                    contentPadding: const EdgeInsets.all(8),
+                    contentPadding: EdgeInsets.all(8),
                   ),
                 ),
-                SizedBox(height: 20), // مسافة قبل زر Sign Up
+                const SizedBox(height: 20), // مسافة قبل زر Sign Up
                 ElevatedButton(
                   onPressed: () {
                     // إضافة إجراء تسجيل حساب جديد
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green, // لون الزر
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20), // حواف دائرية
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Register',
                     style: TextStyle(
                       color: Colors.white, // جعل النص باللون الأبيض
@@ -82,11 +82,11 @@ class Register extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20), // المسافة بين الزر والصف
+                const SizedBox(height: 20), // المسافة بين الزر والصف
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Do not have an account? "),
+                    const Text("Do not have an account? "),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -94,7 +94,7 @@ class Register extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => const Login()), // الانتقال إلى صفحة تسجيل الدخول
                         );
                       },
-                      child: Text(
+                      child: const Text(
                         "Sign In",
                         style: TextStyle(
                           color: Colors.green,
@@ -104,7 +104,7 @@ class Register extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 100), // مسافة إضافية في الأسفل لتوسيع المسافة
+                const SizedBox(height: 100), // مسافة إضافية في الأسفل لتوسيع المسافة
               ],
             ),
           ),
